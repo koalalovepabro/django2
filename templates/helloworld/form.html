@@ -6,11 +6,13 @@
 </head>
 <body>
     <h1>Form Test</h1>
-    <form action="/join" method="post">{% csrf_token %} <!--form 요청: action = 하단 데이터를 /join url로 보내기-->
+    <form action="/join" method="post">{% csrf_token %} <!--form 요청: action = 하단 데이터를 /join url로 보내기/ method= POST방식으로)-->
+
+
         이메일: <input type="text" name="email" value="" />
         <br/><br/>
 
-        비밀번호: <input type="password" name="password" value="" /> <!--type이 password면 영어, 숫자, 기호만 입력받을 수 있다-->
+        비밀번호: <input type="password" name="password" value="" /> <!--type이 password면 입력값이 *로 표시. 영어, 숫자, 기호만 입력받을 수 있다-->
         <br/><br/>
 
         성별: <input type="radio" name="gender" value="male"/>남 <input type="radio" name="gender" value="female" checked="checked"/>여
@@ -26,7 +28,8 @@
         <textarea name="desc" style="width:200px; height:100px"></textarea>
         <br/><br/>
 
-        <input type="submit" value="가입" />
+
+        <input type="submit" value="가입" /> <!-- 여기서 submit한 input값은 view.py로 전달됨-->
     </form>
     <a href="/">main으로 가기</a>
 

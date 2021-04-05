@@ -1,17 +1,17 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
-def main(request):  # 렌더로 하기
 
+def main(request):
     return render(request, 'helloworld/main.html')
+
 
 def hello1(request):
     name = request.GET["name"]
     return HttpResponse(f'<h1>Hello {name}</h1><a href="/">main으로 가기</a>', content_type='text/html; charset=utf-8')
 
 
-def tags(request):  # 렌더로 하기
-
+def tags(request):
     return render(request, 'helloworld/tags.html')
 
 
@@ -26,5 +26,5 @@ def join(request):
     hobbies = request.POST.getlist("hobbies")
     description = request.POST["desc"]
 
-    print(email, password, gender, hobbies, description)
-    return HttpResponse('ok', content_type='text/plain; charset=utf-8')
+    print(email, password, gender, hobbies, description) # 터미널에 출력
+    return HttpResponse('ok', content_type='text/plain; charset=utf-8') # web화면에 출력
