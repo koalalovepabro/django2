@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>form test</title>
+</head>
+<body>
+    <h1>Form Test</h1>
+    <form action="/join" method="post">{% csrf_token %} <!--form 요청: action = 하단 데이터를 /join url로 보내기-->
+        이메일: <input type="text" name="email" value="" />
+        <br/><br/>
+
+        비밀번호: <input type="password" name="password" value="" /> <!--type이 password면 영어, 숫자, 기호만 입력받을 수 있다-->
+        <br/><br/>
+
+        성별: <input type="radio" name="gender" value="male"/>남 <input type="radio" name="gender" value="female" checked="checked"/>여
+        <br/><br/>
+
+        취미: <input type="checkbox" name="hobbies" value="swimming">수영
+        <input type="checkbox" name="hobbies" value="coding">코딩
+        <input type="checkbox" name="hobbies" value="reading">독서
+        <input type="checkbox" name="hobbies" value="cooking">요리
+        <br/><br/>
+
+        자기소개:<br/>
+        <textarea name="desc" style="width:200px; height:100px"></textarea>
+        <br/><br/>
+
+        <input type="submit" value="가입" />
+    </form>
+    <a href="/">main으로 가기</a>
+
+</body>
+</html>
