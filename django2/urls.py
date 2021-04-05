@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import path
 
 import helloworld.views as helloworldviews
+import emaillist01.views as emaillist01views
+
 
 urlpatterns = [
     path('', helloworldviews.main),
@@ -24,5 +26,9 @@ urlpatterns = [
     path('form/', helloworldviews.form),
     path('hello1/', helloworldviews.hello1),
     path('tags/', helloworldviews.tags),
+
+    path('emaillist01/', emaillist01views.index),
+
+
     path('admin/', admin.site.urls),
 ]
