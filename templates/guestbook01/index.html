@@ -1,3 +1,5 @@
+{% load mathfilters %}
+
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -22,21 +24,23 @@
 
 	</table>
 	</form>
-
-
-	<br>
+<!--	&#45;&#45;{{guestbook_list | length}}&#45;&#45; <br/>-->
+<!--	<p>-->
+<!--		10 - 5 + 1 = {{10 | sub:5 | add:1}}-->
+<!--	</p>-->
 
 	{% for guestbook in guestbook_list %}
 
+
 	<table width=510 border=1>
 		<tr>
-			<td>{{ guestbook.no }}</td>
+			<td>{{ guestbook_list | length | sub:forloop.counter | add:1 }}</td>  <!--loop 돌고나면 카운트 하나씩 찍음. 1부터 시작-->
 			<td>{{ guestbook.name }}</td>
 			<td>{{ guestbook.reg_date }}</td>
 			<td><a href="/guestbook01/deleteform?no={{ guestbook.no }}">삭제</a></td>
 		</tr>
 		<tr>
-			<td colspan=4>{{ guestbook.message }}</td>
+			<td colspan=4>{{ guestbook.message | linebreaksbr }}</td>
 		</tr>
 	</table>
 
@@ -44,3 +48,8 @@
 
 </body>
 </html>
+
+
+
+
+

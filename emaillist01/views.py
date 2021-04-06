@@ -8,11 +8,11 @@ from emaillist01.models import findall
 def index(request):
     results = models.findall()
     data = {"emaillist_list": results}
-    return render(request, 'emaillist01/index.html', data)
+    return render(request, 'emaillist02/index.html', data)
 
 
 def form(request):
-    return render(request, 'emaillist01/form.html')
+    return render(request, 'emaillist02/form.html')
 
 
 def add(request):
@@ -22,4 +22,4 @@ def add(request):
 
     models.insert(firstname, lastname, email)
 
-    return HttpResponseRedirect("/emaillist01")
+    return HttpResponseRedirect("/emaillist02")
